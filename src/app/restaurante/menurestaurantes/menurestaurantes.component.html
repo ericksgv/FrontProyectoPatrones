@@ -1,0 +1,28 @@
+<section class="principal">
+    <div class="navegacion">
+        <img src="assets/pagina/logo.png" alt="Imagen Izquierda" class="imagen-izquierda">
+        <img src="assets/restaurante/barrabusqueda.png" alt="Imagen Derecha" class="imagen-derecha">
+    </div>
+    <div class="ofertas">
+        <img src="assets/restaurante/oferta1.png" alt="Imagen" class="imagen">
+        <div class="boton-izquierdo">◄</div>
+        <div class="boton-derecho">►</div>
+    </div>
+    <div class="textos">
+        <div class="titulo1 titulo">RESTAURANTES</div>
+        <div class="titulo">ESCOGE UNO</div>
+        <button class="titulo titulo3 boton">EMPIEZA DE NUEVO</button>
+    </div>
+    <div class="rectangulo-container">
+        <div *ngFor="let comida of comidas" class="rectangulo" (click)="seleccionarRestaurante(comida.id, comida.foto, comida.nombre)">
+          <img [src]="comida.comidaFavorita" alt="Imagen Comida" width="200" height="200">
+          <img [src]="comida.foto" alt="Logo" width="50" height="50">
+          <p>{{ comida.nombre }}</p>
+        </div>
+      </div>      
+    <div class="clear"></div> 
+</section>
+<footer>
+    <button class="botonlista textobotones">Ver Lista</button>
+    <button class="botonpagar textobotones">{{ total | currency:'USD':'symbol':'1.2-2' }} PAGAR</button>
+</footer>

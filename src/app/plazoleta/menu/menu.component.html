@@ -1,0 +1,16 @@
+<div class="completo">
+    <div class="container">
+
+        <img src="assets/pagina/logo.png" alt="Imagen Plazoleta" class="imagen-plazoleta">
+
+        <h2>Selecciona la plazoleta</h2>
+
+        <div>
+            <select id="plazoletaList" [(ngModel)]="selectedPlazoletaId">
+                <option *ngFor="let plazoleta of plazoletas" [value]="plazoleta.id">{{ plazoleta.nombre }}</option>
+            </select>
+        </div>
+
+        <button (click)="guardarPlazoleta()">Continuar</button>
+    </div>
+</div>

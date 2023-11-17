@@ -1,0 +1,44 @@
+<div class="navegacion">
+    <img src="assets/pagina/logo.png" alt="Imagen Izquierda" class="imagen-izquierda">
+    <img src="assets/restaurante/barrabusqueda.png" alt="Imagen Derecha" class="imagen-derecha">
+</div>
+<div class="textos">
+    <div></div>
+    <div class="titulo">Lista Productos</div>
+    <button class="titulo titulo3 boton">EMPIEZA DE NUEVO</button>
+</div>
+
+<!-- factura.component.html -->
+
+<section class="factura">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Plato</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pedido of pedidos; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ pedido.nombre }}</td>
+                <td>{{ pedido.cantidad }}</td>
+                <td>{{ pedido.precioPlato | currency:'USD':'symbol':'1.2-2' }}</td>
+                <td>{{ pedido.subtotalPlato | currency:'USD':'symbol':'1.2-2' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="total">
+        <span>Total:</span>
+        <span>{{ total | currency:'USD':'symbol':'1.2-2' }}</span>
+    </div>
+    <div class="clear"></div>
+</section>
+
+<footer>
+    <button class="botonlista textobotones" (click)="verLista()">Volver</button>
+    <button class="botonpagar textobotones"(click)="realizarPago()">{{ total | currency:'USD':'symbol':'1.2-2' }} PAGAR</button>
+</footer>

@@ -1,0 +1,27 @@
+<div class="completo">
+    <div class="container">
+        <img src="assets/pagina/logo.png" alt="Imagen Plazoleta" class="imagen-plazoleta">
+
+        <h2>Registro de Usuario</h2>
+        <form [formGroup]="form" class="form" (submit)="guardarUsuario()">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" class="form-control" formControlName="nombre" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" class="form-control"  formControlName="apellido" required>
+
+            <label for="cedula">Cédula:</label>
+            <input type="number" id="cedula" class="form-control"  formControlName="cedula" required pattern="[0-9]{10}" minlength="10"
+                maxlength="10">
+
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" class="form-control"  formControlName="correo" required
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+            <input type="hidden" id="id" formControlName="id">
+            <button type="submit">Guardar</button>
+            <div *ngIf="form.get('correo')?.hasError('pattern') && form.get('correo')?.touched">
+                Ingresa un correo electrónico válido.
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="navegacion">
+    <img src="assets/pagina/logo.png" alt="Imagen Izquierda" class="imagen-izquierda">
+    <img src="assets/restaurante/barrabusqueda.png" alt="Imagen Derecha" class="imagen-derecha">
+</div>
+<div class="textos">
+    <img [src]="getRestauranteFoto()" alt="Logo de la Plazoleta" class="imagenlogo">
+    <div class="titulo">ESCOGE UNO</div>
+    <button class="titulo titulo3 boton">EMPIEZA DE NUEVO</button>
+</div>
+<div class="galeria">
+    <div *ngFor="let plato of platos" class="item">
+        <img [src]="plato.imagen" alt="Imagen" class="imagencomida">
+        <div class="titulo">{{ plato.nombre }}</div>
+        <div class="precio">{{ plato.precio | currency:'USD':'symbol':'1.2-2' }}</div>
+      
+        <div class="cantidad-container">
+          <label for="cantidad{{ plato.id }}">Cantidad:</label>
+          <input type="number" id="cantidad{{ plato.id }}" [(ngModel)]="plato.cantidad" min="1">
+        </div>
+      
+        <button (click)="agregarAlPedido(plato)">Agregar</button>
+      </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<footer>
+    <button class="botonlista textobotones" (click)="verLista()">Ver Lista</button>
+    <button class="botonpagar textobotones">{{ total | currency:'USD':'symbol':'1.2-2' }} PAGAR</button>
+</footer>
