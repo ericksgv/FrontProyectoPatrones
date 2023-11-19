@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./menurestaurantes.component.css']
 })
 export class MenurestaurantesComponent implements OnInit {
+
   comidas: any[] = []; 
   total: number = 0;
   constructor(
@@ -35,6 +36,18 @@ export class MenurestaurantesComponent implements OnInit {
      if (storedTotal) {
        this.total = parseFloat(storedTotal);
      }
+  }
+
+  salir(): void {
+    // Eliminar todo el contenido del localStorage
+  localStorage.clear();
+
+  // Redireccionar al componente MenuComponent
+    this.router.navigate(['/']);
+  }
+
+  pagar() {
+    this.router.navigate(['/factura']);
   }
 
   seleccionarRestaurante(id: number, foto: string, nombre: string): void {

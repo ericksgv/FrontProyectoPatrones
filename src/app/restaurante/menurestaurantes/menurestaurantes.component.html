@@ -23,6 +23,6 @@
     <div class="clear"></div> 
 </section>
 <footer>
-    <button class="botonlista textobotones">Ver Lista</button>
-    <button class="botonpagar textobotones">{{ total | currency:'USD':'symbol':'1.2-2' }} PAGAR</button>
+    <button class="botonlista textobotones" (click)="salir()">Salir</button>
+    <button class="botonpagar textobotones" (click)="pagar()">{{ total | currency:'USD':'symbol':'1.2-2' }} PAGAR</button>
 </footer>

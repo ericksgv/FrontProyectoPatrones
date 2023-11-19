@@ -130,7 +130,20 @@ export class PlatosrestaurantesComponent implements OnInit {
     this.router.navigate(['/factura']);  
   }
 
+  salir(): void {
+    // Eliminar todo el contenido del localStorage
+  localStorage.clear();
+  
+  // Redireccionar al componente MenuComponent
+    this.router.navigate(['/']);
+  }
+  
+  pagar() {
+    this.router.navigate(['/factura']);
+  }
+
 }
+
 
 interface Plato {
   id: number;

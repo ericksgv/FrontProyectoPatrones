@@ -28,7 +28,13 @@
                 <td>{{ pedido.cantidad }}</td>
                 <td>{{ pedido.precioPlato | currency:'USD':'symbol':'1.2-2' }}</td>
                 <td>{{ pedido.subtotalPlato | currency:'USD':'symbol':'1.2-2' }}</td>
+                <td>
+                    <button class="eliminar-btn" (click)="eliminarFila(i)">
+                        <i class="bi bi-trash"></i> <!-- Ícono de la cesta de basura de Bootstrap -->
+                    </button>
+                </td>
             </tr>
+            
         </tbody>
     </table>
     <div class="total">
@@ -39,6 +45,7 @@
 </section>
 
 <footer>
+    <button class="botonlista textobotones" (click)="salir()">Salir</button>
     <button class="botonlista textobotones" (click)="verLista()">Volver</button>
     <button class="botonpagar textobotones"(click)="realizarPago()">{{ total | currency:'USD':'symbol':'1.2-2' }} PAGAR</button>
 </footer>

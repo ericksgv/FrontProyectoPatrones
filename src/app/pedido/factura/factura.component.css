@@ -1,3 +1,5 @@
+
+
 .navegacion{
     justify-content: space-between;
     height: 20vh;
@@ -122,4 +124,10 @@ footer {
 }
 .clear {
     margin-bottom: 30vh; 
+}
+
+.eliminar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
 }

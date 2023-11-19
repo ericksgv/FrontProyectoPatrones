@@ -10,6 +10,7 @@ import { RegistroComponent } from './plazoleta/registro/registro.component';
 import { MenurestaurantesComponent } from './restaurante/menurestaurantes/menurestaurantes.component';
 import { PlatosrestaurantesComponent } from './restaurante/platosrestaurantes/platosrestaurantes.component';
 import { FacturaComponent } from './pedido/factura/factura.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FacturaComponent } from './pedido/factura/factura.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
