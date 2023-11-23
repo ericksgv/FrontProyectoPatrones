@@ -31,6 +31,11 @@ export class MenuAdminComponent implements OnInit {
     }
   }
 
+  logout() {
+    localStorage.removeItem('plazoletaIdAdmin');
+    this.router.navigate(['/ingresoAdmin']);
+  }
+
   navigateTo(route: string) {
     this.router.navigate([route]);
   }

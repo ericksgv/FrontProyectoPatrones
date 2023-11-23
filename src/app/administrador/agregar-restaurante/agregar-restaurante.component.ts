@@ -92,7 +92,15 @@ export class AgregarRestauranteComponent {
         }
       );
   }
+
+
+  volver() {
+    this.router.navigate(['/menu-admin']);
+  }
+
 }
+
+
 
 interface PlazoletaDTO {
   id: number;

@@ -51,6 +51,10 @@ export class HistorialPedidosComponent {
 
   }
 
+  volver() {
+    this.router.navigate(['/menu-admin']);
+  }
+
 }
 
 interface PlazoletaDTO {

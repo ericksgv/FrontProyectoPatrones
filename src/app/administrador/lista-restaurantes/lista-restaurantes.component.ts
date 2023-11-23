@@ -43,6 +43,11 @@ export class ListaRestaurantesComponent implements OnInit {
         );
     }
   }
+
+  volver() {
+    this.router.navigate(['/menu-admin']);
+  }
+
 }
 
 interface PlazoletaDTO {

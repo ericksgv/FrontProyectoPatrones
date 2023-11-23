@@ -60,6 +60,10 @@ export class EliminarRestauranteComponent {
       );
   }
 
+  volver() {
+    this.router.navigate(['/menu-admin']);
+  }
+
 }
 
 

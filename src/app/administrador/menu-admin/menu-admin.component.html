@@ -1,9 +1,10 @@
 <body>
   <div class="completo">
-    <div>
+    <div id = "contene">
       <img src="assets/pagina/logo.png" alt="Imagen Plazoleta">
-      <h1>Plazoleta: {{ plazoletaName }}</h1>
+      <button id="textow" class="titulo titulo3 boton" (click)="logout()">Cerrar Sesión</button>
     </div>
+    <h1>Plazoleta: {{ plazoletaName }}</h1>
     <div (click)="navigateTo('/lista-restaurantes')">
       <img id ="img2"src="assets/pagina/lista.png" alt="Imagen 1">
       <h2 id="texto">LISTA COMERCIO RESTAURANTES</h2>

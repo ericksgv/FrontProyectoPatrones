@@ -91,6 +91,9 @@ export class ModificarRestauranteComponent {
         }
       );
   }
+  volver() {
+    this.router.navigate(['/menu-admin']);
+  }
 }
 
 interface PlazoletaDTO {

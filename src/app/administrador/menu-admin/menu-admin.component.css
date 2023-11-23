@@ -42,6 +42,25 @@ h2 {
 .logo {
   width: 300px;
 }
-#texto {
-  margin-top: 10px;
+ 
+
+#contene{
+  margin-left: -150px;
+}
+#textow{
+  margin-top: 160px;
+  margin-left: -100px;
+  display: inline-block;
+  vertical-align: top;
+  color: aliceblue;
+}
+button {
+  padding: 10px;
+  background-color: #ff6200;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 5px;
 }

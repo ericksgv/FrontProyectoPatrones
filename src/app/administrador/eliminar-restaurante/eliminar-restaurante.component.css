@@ -109,6 +109,16 @@ body {
     border-radius: 5px;
   }
   
+  #contene{
+    margin-left: -150px;
+  }
+  #textow{
+    margin-top: 160px;
+    margin-left: -100px;
+    display: inline-block;
+    vertical-align: top;
+    color: aliceblue;
+  }
 
   
   
