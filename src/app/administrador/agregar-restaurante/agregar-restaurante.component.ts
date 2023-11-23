@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminServiceService } from '../service/admin-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-restaurante',
@@ -57,12 +58,31 @@ export class AgregarRestauranteComponent {
       plazoleta_id: this.plazoletaId,  // Asegúrate de agregar esta línea
     }
 
-    console.log(nuevoRestaurante)
+    const restaurante = {
+      codigoSede: this.restauranteCodigoSede,
+      contrasena: "1234",
+      correo: this.restauranteCorreo,
+      nombre: this.restauranteNombre,
+      foto: this.restauranteLogo,
+      comidaFavorita: this.restauranteComidaFavorita,
+      plazoleta:{
+        id: this.plazoletaId
+      }
+    }
+
+    console.log(restaurante)
     // Llamar al servicio para crear el restaurante
-    this.adminService.crearRestaurante(nuevoRestaurante)
+    this.adminService.crearRestaurante(restaurante)
       .subscribe(
         (response) => {
           console.log('Restaurante creado exitosamente:', response);
+          Swal.fire({
+            icon: 'success',
+            title: 'OK',
+            text: 'Restaurante creado exitosamente',
+          });
+          //Redirigir a otra página
+          this.router.navigate(['/menu-admin']);
           // Puedes redirigir a otra página o realizar otras acciones después de la creación
         },
         (error) => {
