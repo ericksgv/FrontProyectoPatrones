@@ -1,1 +1,32 @@
-<p>eliminar-restaurante works!</p>
+
+<body>
+    <div class="completo">
+        <div>
+          <img class="logo" src="assets/pagina/logo.png" alt="Imagen Plazoleta">
+          <h1>Plazoleta: {{ plazoletaName }}</h1>
+          <br>
+          <br>
+          
+        </div>
+        <div >
+            <img id ="img2" src="assets/pagina/deletePerson.png" alt="Imagen 5">
+            <h2 id="texto">Eliminar restaurante</h2>
+        </div>
+        <br>
+
+        
+
+        <div class="form-container">
+            <form (submit)="onSubmit()">
+
+              <div class="label-input-container">
+                <label for="codigoRestaurante">Código restaurante: </label>
+                <input type="text" id="codigoSede" name="codigoRestaurante" [(ngModel)]="restauranteId">
+              </div>
+    
+              <button type="submit">Agregar</button>
+            </form>
+          </div>
+          
+      </div>
+    </body>
