@@ -47,17 +47,14 @@ export class AgregarRestauranteComponent {
 
   onSubmit(): void {
     // Crear un objeto con los datos del restaurante
-    const nuevoRestaurante: RestauranteDTO = {
-      id: this.restauranteId,
-      codigo_sede: this.restauranteCodigoSede,  // Puedes modificar esto según tus necesidades
-      comida_favorita: this.restauranteComidaFavorita,
-      contrasena : "1234",
-      correo: this.restauranteCorreo,
-      foto: this.restauranteLogo,
-      nombre: this.restauranteNombre,
-      plazoleta_id: this.plazoletaId,  // Asegúrate de agregar esta línea
+    if (!this.restauranteNombre || !this.restauranteCodigoSede || !this.restauranteCorreo || !this.restauranteLogo || !this.restauranteComidaFavorita) {
+      Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Por favor, complete todos los campos antes de enviar el formulario',
+      });
+      return; // Detiene la ejecución si algún campo no está lleno
     }
-
     const restaurante = {
       codigoSede: this.restauranteCodigoSede,
       contrasena: "1234",
@@ -86,6 +83,11 @@ export class AgregarRestauranteComponent {
           // Puedes redirigir a otra página o realizar otras acciones después de la creación
         },
         (error) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Error al crear el restaurante',
+          });
           console.error('Error al crear el restaurante:', error);
         }
       );

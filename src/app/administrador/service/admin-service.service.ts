@@ -32,6 +32,12 @@ export class AdminServiceService {
     return this.http.post(url, restaurante);
   }
 
+  eliminarRestaurante(restauranteId: number): Observable<any> {
+    const url = `${this.apiUrl}/restaurante/delete/${restauranteId}`;
+    return this.http.delete(url);
+  }
+  
+
 }
 
 interface PlazoletaDTO {
