@@ -29,9 +29,16 @@ h2 {
   margin: 20px;
 }
 
-.completo img {
+/* .completo img {
   width: 80px;
+} */
+
+
+#img2 {
+  width: 80px; /* Adjust the width as needed */
+  margin-right: 20px;
 }
+
 .logo {
   width: 300px;
 }
