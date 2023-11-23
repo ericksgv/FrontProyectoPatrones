@@ -1,1 +1,25 @@
-<p>historial-pedidos works!</p>
+<body>
+    <div class="completo">
+        <div>
+            <img class="logo" src="assets/pagina/logo.png" alt="Imagen Plazoleta">
+            <h1>Plazoleta: {{ plazoletaName }}</h1>
+            <br>
+            <br>
+        </div>
+        <div>
+            <img id="img2" src="assets/pagina/history.png" alt="Imagen 5">
+            <h2 id="texto">Historial de pedidos</h2>
+        </div>
+        <br>
+
+        <div class="table-header" style="background-color: #FF8A00; color: white;">
+            <div class="table-cell id">ID</div>
+            <div class="table-cell nombre">TOTAL</div>
+        </div>
+
+        <div *ngFor="let pedido of pedidos" class="table-row">
+            <div class="table-cell id">{{ pedido.id }}</div>
+            <div class="table-cell nombre">{{ pedido.total }}</div>
+        </div>
+    </div>
+</body>

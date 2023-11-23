@@ -69,6 +69,25 @@ body {
 
 }
 
+
+.table-cell.idH {
+  width: 200px;
+  margin: 0; /* Reset margin to remove extra space */
+
+}
+
+.table-cell.nombreH {
+  width: 204px;
+  margin: 0; /* Reset margin to remove extra space */
+
+}
+
+.table-cell.logoH {
+  width: 210px;
+  margin: 0; /* Reset margin to remove extra space */
+}
+
+
 .table-cell.id {
   width: 220px;
   margin: 0; /* Reset margin to remove extra space */
