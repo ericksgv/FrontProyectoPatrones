@@ -36,8 +36,12 @@ export class AdminServiceService {
     const url = `${this.apiUrl}/restaurante/delete/${restauranteId}`;
     return this.http.delete(url);
   }
-  
 
+  getAllPedidosByPlazoleta(plazoletaId: number): Observable<PedidoDTO[]> {
+    const url = `${this.apiUrl}/pedido/get-all-pedido-by-plazoleta/${plazoletaId}`;
+    return this.http.get<PedidoDTO[]>(url);
+  }
+  
 }
 
 interface PlazoletaDTO {
@@ -52,4 +56,9 @@ interface RestauranteDTO {
   foto: string;
   comidaFavorita: string;
   id: number;
+}
+
+interface PedidoDTO {
+  id: number;
+  total: number;
 }
