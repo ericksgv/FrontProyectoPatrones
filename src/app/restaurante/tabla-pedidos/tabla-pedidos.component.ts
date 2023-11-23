@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DetallePedido } from '../DetallePedido';
+import { interval, startWith, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-tabla-pedidos',
@@ -34,7 +35,7 @@ logout() {
     this.http.get<DetallePedido[]>(`http://localhost:8090/detalle-pedido/actualizarPedidos/${Number(localStorage.getItem('idRestauranteActual'))}`)
       .subscribe((data) => {
         this.pedidos = data;
-        console.log(this.pedidos)
+        console.log(data)
       });
   }
   
@@ -46,13 +47,18 @@ logout() {
 
   ngOnInit() {
     // Obtén el restauranteId de los parámetros de la URL
-
-    localStorage.setItem('idRestauranteActual', '5')
     // Llama a la API para obtener la lista de pedidos
-    this.http.get<DetallePedido[]>(`http://localhost:8090/detalle-pedido/actualizarPedidos/${Number(localStorage.getItem('idRestauranteActual'))}`)
+    this.actualizarListaPedidos();
+
+    // Actualiza la lista de pedidos cada 5 segundos (ajusta según tus necesidades)
+    interval(5000)
+      .pipe(
+        startWith(0), // Emite un valor al inicio para activar la primera llamada
+        switchMap(() => this.http.get<DetallePedido[]>(`http://localhost:8090/detalle-pedido/actualizarPedidos/${Number(localStorage.getItem('idRestauranteActual'))}`))
+      )
       .subscribe((data) => {
         this.pedidos = data;
-        console.log(this.pedidos)
+        console.log('Lista de pedidos actualizada:', data);
       });
   }
 
