@@ -1,0 +1,21 @@
+<div class="completo">
+    <div class="container">
+        <img src="assets/pagina/logo.png" alt="Imagen Plazoleta" class="imagen-plazoleta">
+        <h2 style="text-align: center;">Ingreso</h2>
+        <label for="adminEmail">Email:</label>
+        <input type="text" id="adminEmail" [(ngModel)]="email">
+        <label for="adminContrasena">Contraseña:</label>
+        <input type="text" id="contraseña" [(ngModel)]="contrasena">
+        <!-- Lista de plazoletas -->
+        <h2>Selecciona la plazoleta</h2>
+        <div>
+            <select id="plazoletaList" [(ngModel)]="selectedPlazoletaId">
+                <option *ngFor="let plazoleta of plazoletas" [value]="plazoleta.id">{{ plazoleta.nombre }}</option>
+            </select>
+        </div>
+        <button (click)="ejecutarAmbasFunciones()">Ingresar</button>
+    </div>
+</div>
+
+
+

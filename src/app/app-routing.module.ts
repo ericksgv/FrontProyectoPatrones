@@ -6,6 +6,13 @@ import { RegistroComponent } from './plazoleta/registro/registro.component';
 import { MenurestaurantesComponent } from './restaurante/menurestaurantes/menurestaurantes.component';
 import { PlatosrestaurantesComponent } from './restaurante/platosrestaurantes/platosrestaurantes.component';
 import { FacturaComponent } from './pedido/factura/factura.component';
+import { MenuAdminComponent } from './administrador/menu-admin/menu-admin.component';
+import { ListaRestaurantesComponent } from './administrador/lista-restaurantes/lista-restaurantes.component';
+import { EliminarRestauranteComponent } from './administrador/eliminar-restaurante/eliminar-restaurante.component';
+import { AgregarRestauranteComponent } from './administrador/agregar-restaurante/agregar-restaurante.component';
+import { IngresoAdminComponent } from './administrador/ingreso-admin/ingreso-admin.component';
+import { ModificarRestauranteComponent } from './administrador/modificar-restaurante/modificar-restaurante.component';
+import { HistorialPedidosComponent } from './administrador/historial-pedidos/historial-pedidos.component';
 const routes: Routes = [
   {
     path: '',
@@ -30,7 +37,39 @@ const routes: Routes = [
   {
     path: 'factura',
     component: FacturaComponent,
+  },
+  //Componentes Admin
+  {
+    path : 'menu-admin',
+    component : MenuAdminComponent
+  },
+  {
+    path : 'lista-restaurantes',
+    component : ListaRestaurantesComponent
+  },
+  {
+    path : 'eliminar-restaurante',
+    component : EliminarRestauranteComponent
+  },
+  {
+    path : 'agregarRestaurante', 
+    component : AgregarRestauranteComponent
+  },
+  {
+    path : 'modificarRestaurante',
+    component : ModificarRestauranteComponent
+
+  },
+  {
+    path : 'historialPedidosAdmin', 
+    component : HistorialPedidosComponent
+
+  },
+  {
+    path : 'ingresoAdmin',
+    component : IngresoAdminComponent
   }
+  
 ];
 
 @NgModule({

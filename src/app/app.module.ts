@@ -11,6 +11,13 @@ import { MenurestaurantesComponent } from './restaurante/menurestaurantes/menure
 import { PlatosrestaurantesComponent } from './restaurante/platosrestaurantes/platosrestaurantes.component';
 import { FacturaComponent } from './pedido/factura/factura.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MenuAdminComponent } from './administrador/menu-admin/menu-admin.component';
+import { ListaRestaurantesComponent } from './administrador/lista-restaurantes/lista-restaurantes.component';
+import { AgregarRestauranteComponent } from './administrador/agregar-restaurante/agregar-restaurante.component';
+import { ModificarRestauranteComponent } from './administrador/modificar-restaurante/modificar-restaurante.component';
+import { EliminarRestauranteComponent } from './administrador/eliminar-restaurante/eliminar-restaurante.component';
+import { IngresoAdminComponent } from './administrador/ingreso-admin/ingreso-admin.component';
+import { HistorialPedidosComponent } from './administrador/historial-pedidos/historial-pedidos.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +28,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MenurestaurantesComponent,
     PlatosrestaurantesComponent,
     FacturaComponent,
+    MenuAdminComponent,
+    ListaRestaurantesComponent,
+    AgregarRestauranteComponent,
+    ModificarRestauranteComponent,
+    EliminarRestauranteComponent,
+    IngresoAdminComponent,
+    HistorialPedidosComponent,
   ],
   imports: [
     BrowserModule,
