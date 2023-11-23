@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminServiceService } from '../service/admin-service.service';
 
 @Component({
   selector: 'app-agregar-restaurante',
@@ -7,4 +10,83 @@ import { Component } from '@angular/core';
 })
 export class AgregarRestauranteComponent {
 
+  plazoletaId: number = 0;
+  plazoletaName: string = "";
+
+
+  // Restaurante
+  restauranteId: number = 0;
+  restauranteNombre: string = "";
+  restauranteCorreo: string = "";
+  restauranteLogo: string = "";
+  restauranteComidaFavorita: string = "";
+  restauranteCodigoSede : string ="";
+
+
+  constructor(private http: HttpClient, private router: Router, private adminService: AdminServiceService) {}
+
+
+  ngOnInit(): void {
+    this.plazoletaId = +localStorage.getItem("plazoletaIdAdmin")!;
+  
+    if (this.plazoletaId) {
+      // Fetch plazoleta name
+      this.adminService.obtenerNombrePlazoletaPorId(this.plazoletaId)
+        .subscribe(
+          (plazoleta: PlazoletaDTO) => {
+            this.plazoletaName = plazoleta.nombre;
+          },
+          (error) => {
+            console.error('Error fetching plazoleta name:', error);
+          }
+        );
+    }
+  }
+
+
+  onSubmit(): void {
+    // Crear un objeto con los datos del restaurante
+    const nuevoRestaurante: RestauranteDTO = {
+      id: this.restauranteId,
+      codigo_sede: this.restauranteCodigoSede,  // Puedes modificar esto según tus necesidades
+      comida_favorita: this.restauranteComidaFavorita,
+      contrasena : "1234",
+      correo: this.restauranteCorreo,
+      foto: this.restauranteLogo,
+      nombre: this.restauranteNombre,
+      plazoleta_id: this.plazoletaId,  // Asegúrate de agregar esta línea
+    }
+
+    console.log(nuevoRestaurante)
+    // Llamar al servicio para crear el restaurante
+    this.adminService.crearRestaurante(nuevoRestaurante)
+      .subscribe(
+        (response) => {
+          console.log('Restaurante creado exitosamente:', response);
+          // Puedes redirigir a otra página o realizar otras acciones después de la creación
+        },
+        (error) => {
+          console.error('Error al crear el restaurante:', error);
+        }
+      );
+  }
 }
+
+interface PlazoletaDTO {
+  id: number;
+  nombre: string;
+}
+
+interface RestauranteDTO {
+  id: number;
+  codigo_sede: string;
+  comida_favorita: string;
+  contrasena : string;
+  correo: string;
+  foto: string;
+  nombre: string;
+  plazoleta_id : number;
+}
+
+
+//(id, codigo_sede, comida_favorita, contrasena, correo, foto, nombre, plazoleta_id) values (default, ?, ?, ?, ?, ?, ?, ?) [23502-214]

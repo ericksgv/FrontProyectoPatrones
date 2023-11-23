@@ -27,6 +27,11 @@ export class AdminServiceService {
     return this.http.get<RestauranteDTO[]>(url);
   }
 
+  crearRestaurante(restaurante: any): Observable<any> {
+    const url = `${this.apiUrl}/restaurante/create`;
+    return this.http.post(url, restaurante);
+  }
+
 }
 
 interface PlazoletaDTO {
