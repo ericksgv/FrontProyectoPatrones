@@ -1,0 +1,43 @@
+<body>
+
+<div class="navegacion">
+    <img src="assets/pagina/logo.png" alt="Imagen Izquierda" class="imagen-izquierda">
+    <img src="assets/restaurante/barrabusqueda.png" alt="Imagen Derecha" class="imagen-derecha">
+</div>
+
+<div class="textos">
+    <div></div>
+    <div class="titulo">Lista de Pedidos</div>
+    <button class="titulo titulo3 boton" (click)="logout()">Cerrar Sesión</button>
+</div>
+
+<section class="factura">
+    <table>
+        <thead>
+            <tr>
+                <th>No. de Pedido</th>
+                <th>Plato</th>
+                <th>Cantidad</th>
+                <th>Valor</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pedido of pedidos; let i = index">
+                <td>{{ pedido.id }}</td>
+                <td>{{ pedido.platoNombre }}</td>
+                <td>{{ pedido.cantidad }}</td>
+                <td>{{ pedido.subtotal }}</td>
+                <td>{{ pedido.estado }}</td>
+                <td *ngIf="pedido.estado !== 'listo'">
+                  <button class="marcar-listo-btn" (click)="marcarComoListo(pedido.id)">
+                      <i class="bi bi-check"></i> <!-- Ícono de marca de verificación de Bootstrap -->
+                  </button>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</body>

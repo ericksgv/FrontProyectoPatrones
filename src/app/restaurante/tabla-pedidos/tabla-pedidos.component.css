@@ -1,0 +1,131 @@
+.navegacion{
+    justify-content: space-between;
+    height: 20vh;
+    display: flex;
+}
+.imagen-izquierda {
+    width: 50vh;
+    max-height: 30vh;
+    top:0;
+    margin-left: 2%;
+}
+.imagen-derecha {
+    width: 100vh; 
+    margin-top: 3%;
+    height: 9vh;
+    margin-right: 10vh;   
+}
+
+.textos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.titulo{
+    color: #000;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 20px;
+    font-weight: bold; 
+    font-style: normal;
+    line-height: normal;
+}
+.titulo3{
+    margin-right: 5%;
+}
+
+.boton{
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #AFAFAF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: 1%;
+}
+
+
+/* factura.component.css */
+
+.factura {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #FF8A00;
+    color: #fff;
+  }
+  
+  .total {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .botonlista{
+    height: 4vw;
+    width: 8vw;
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #008EBB;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-right: 10vw;
+ 
+}
+.botonpagar {
+    color: #fff; 
+    height: 6vw;
+    width: 10vw;
+    margin-right: 10%; 
+    cursor: pointer;
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #E4DB03;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ 
+}
+.textobotones{
+    color: #000;
+    text-align: center;
+    font-family: Hammersmith One, serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  
+}
+footer {
+    position: fixed;
+    background-color: #333; 
+    color: #fff; 
+    padding: 10px;
+    text-align: right; 
+    height: 13%;
+    width: 100vw;
+    bottom: 0;
+    
+}
+.clear {
+    margin-bottom: 30vh; 
+}
+
+.eliminar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

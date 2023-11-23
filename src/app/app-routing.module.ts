@@ -13,9 +13,12 @@ import { AgregarRestauranteComponent } from './administrador/agregar-restaurante
 import { IngresoAdminComponent } from './administrador/ingreso-admin/ingreso-admin.component';
 import { ModificarRestauranteComponent } from './administrador/modificar-restaurante/modificar-restaurante.component';
 import { HistorialPedidosComponent } from './administrador/historial-pedidos/historial-pedidos.component';
+import { TablaPedidosComponent } from './restaurante/tabla-pedidos/tabla-pedidos.component';
+import { LoginComponent } from './restaurante/login/login.component';
+import { CentralComponent } from './central/central.component';
 const routes: Routes = [
   {
-    path: '',
+    path: 'login-usuario',
     component: MenuComponent,
   },
   {
@@ -68,6 +71,18 @@ const routes: Routes = [
   {
     path : 'ingresoAdmin',
     component : IngresoAdminComponent
+  },
+  {
+    path : 'pedidos_Restaurante',
+    component : TablaPedidosComponent
+  },
+  {
+    path : 'login-restaurante',
+    component : LoginComponent
+  },
+  {
+    path : '',
+    component : CentralComponent
   }
   
 ];

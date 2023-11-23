@@ -59,7 +59,7 @@ export class FacturaComponent implements OnInit {
     localStorage.clear();
 
     // Redireccionar al componente MenuComponent
-    this.router.navigate(['/']);
+    this.router.navigate(['/login-usuario']);
   }
 
   realizarPago(): void {
@@ -118,7 +118,7 @@ export class FacturaComponent implements OnInit {
                 // Redireccionar a otra página
                 // Eliminar todos los elementos del localStorage
                 localStorage.clear();
-                this.router.navigate(['/']); // Reemplaza '/otra-pagina' con la ruta a la que quieres redirigir
+                this.router.navigate(['/login-usuario']); // Reemplaza '/otra-pagina' con la ruta a la que quieres redirigir
               }
             });
           },

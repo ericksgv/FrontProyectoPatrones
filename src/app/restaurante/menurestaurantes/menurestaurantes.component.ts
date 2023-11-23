@@ -43,7 +43,7 @@ export class MenurestaurantesComponent implements OnInit {
   localStorage.clear();
 
   // Redireccionar al componente MenuComponent
-    this.router.navigate(['/']);
+    this.router.navigate(['/login-usuario']);
   }
 
   pagar() {

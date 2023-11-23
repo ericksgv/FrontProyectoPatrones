@@ -18,6 +18,9 @@ import { ModificarRestauranteComponent } from './administrador/modificar-restaur
 import { EliminarRestauranteComponent } from './administrador/eliminar-restaurante/eliminar-restaurante.component';
 import { IngresoAdminComponent } from './administrador/ingreso-admin/ingreso-admin.component';
 import { HistorialPedidosComponent } from './administrador/historial-pedidos/historial-pedidos.component';
+import { TablaPedidosComponent } from './restaurante/tabla-pedidos/tabla-pedidos.component';
+import { LoginComponent } from './restaurante/login/login.component';
+import { CentralComponent } from './central/central.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { HistorialPedidosComponent } from './administrador/historial-pedidos/his
     EliminarRestauranteComponent,
     IngresoAdminComponent,
     HistorialPedidosComponent,
+    TablaPedidosComponent,
+    LoginComponent,
+    CentralComponent
   ],
   imports: [
     BrowserModule,
