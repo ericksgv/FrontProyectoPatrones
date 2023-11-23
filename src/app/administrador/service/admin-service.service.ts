@@ -41,6 +41,11 @@ export class AdminServiceService {
     const url = `${this.apiUrl}/pedido/get-all-pedido-by-plazoleta/${plazoletaId}`;
     return this.http.get<PedidoDTO[]>(url);
   }
+
+  updateRestaurante(restauranteId: number, restaurante: any): Observable<any> {
+    const url = `${this.apiUrl}/restaurante/update/${restauranteId}`;
+    return this.http.put(url, restaurante);
+  }
   
 }
 

@@ -1,1 +1,55 @@
-<p>modificar-restaurante works!</p>
+<body>
+    <div class="completo">
+        <div>
+          <img class="logo" src="assets/pagina/logo.png" alt="Imagen Plazoleta">
+          <h1>Plazoleta: {{ plazoletaName }}</h1>
+          <br>
+          <br>
+        </div>
+        <div >
+            <img id ="img2" src="assets/pagina/addUser.png" alt="Imagen 5">
+            <h2 id="texto">Agregar nuevos restaurantes</h2>
+        </div>
+        <br>
+  
+        <div class="form-container">
+            <form (submit)="onSubmit()">
+
+                <div class="label-input-container">
+                    <label for="idRestaurante">Id restaurante:</label>
+                    <input type="text" id="idRestaurante" name="idRestaurante" [(ngModel)]="restauranteId" required>
+                </div>
+                
+              <div class="label-input-container">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" [(ngModel)]="restauranteNombre" required>
+              </div>
+  
+              <div class="label-input-container">
+                <label for="codigoSede">Código sede: </label>
+                <input type="text" id="codigoSede" name="codigoSede" [(ngModel)]="restauranteCodigoSede" required>
+              </div>
+        
+              <div class="label-input-container">
+                <label for="correo">Correo:</label>
+                <input type="text" id="correo" name="correo" [(ngModel)]="restauranteCorreo" required>
+              </div>
+        
+              <div class="label-input-container">
+                <label for="logo">Logo:</label>
+                <input type="text" id="logo" name="logo" [(ngModel)]="restauranteLogo" required>
+              </div>
+        
+              <div class="label-input-container">
+                <label for="comidaFavorita">Comida favorita:</label>
+                <input type="text" id="comidaFavorita" name="comidaFavorita" [(ngModel)]="restauranteComidaFavorita" required>
+              </div>
+  
+              <br>
+  
+              <button type="submit">Agregar</button>
+            </form>
+        </div>
+      </div>
+  </body>
+  
