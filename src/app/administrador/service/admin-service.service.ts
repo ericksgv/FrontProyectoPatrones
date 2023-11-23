@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AdminServiceService {
   private apiUrl = 'http://localhost:8090'; 
   private baseUrl = 'http://localhost:8090/plazoleta';
