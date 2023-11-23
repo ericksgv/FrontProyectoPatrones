@@ -17,5 +17,11 @@ export class FacturacionService {
   enviarDetallePedido(detallePedido: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/detalle-pedido/create`, detallePedido);
   }
+
+  enviarFactura(factura: number): Observable<any> {
+    const url = `${this.apiUrl}/pedido/confirm/${factura}`;
+    return this.http.post(url, null); // el segundo parámetro es el cuerpo del POST, que es null en este caso
+  }
+  
 }
 

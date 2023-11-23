@@ -13,6 +13,7 @@ import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 export class FacturaComponent implements OnInit {
   pedidos: any[] = [];
   total: number = 0;
+  idPedido: number = 0;
 
   constructor(
     private router: Router,
@@ -86,6 +87,7 @@ export class FacturaComponent implements OnInit {
     this.facturacionService.realizarPedido(pedido).subscribe({
       next: (response: any) => {
         console.log('Pedido enviado con éxito:', response);
+        this.idPedido = response.id
 
         const detallePedidoObservables = this.pedidos.map((pedido) => {
           const detallePedido = {
@@ -106,6 +108,18 @@ export class FacturaComponent implements OnInit {
               detalleResponses
             );
 
+            this.facturacionService.enviarFactura(this.idPedido).subscribe({
+              next: (response: any) => {
+                // Manejar la respuesta aquí
+                console.log('Respuesta de enviarFactura:', response);
+          
+                // Resto del código...
+              },
+              error: (error) => {
+                // Manejar errores aquí
+                console.error('Error al enviar la factura:', error);
+              },
+            });
             // Mostrar mensaje de agradecimiento con SweetAlert
             // Mostrar mensaje de agradecimiento con SweetAlert
             Swal.fire({
